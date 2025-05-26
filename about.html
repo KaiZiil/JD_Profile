@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>about界面</title>
+    <link rel="stylesheet" href="./css/about.css">
+</head>
+
+<body>
+    <div>
+        <img src="./image/about_head.png" width="1260px" height="300px" style="margin: 0 auto;">
+    </div>
+    <div class="wrap">
+        <nav class="menu">
+            <ul>
+                <li><a href="privacy.html" target="mainFrame">企业简介</a><br /><br /></li>
+                <li><a href="founder.html" target="mainFrame" id="founder">创始人页面</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame">内控合规</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame">大事记</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame">企业荣誉</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame" id="privacy">京东隐私政策</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame">人才招聘</a><br /><br /></li>
+                <li><a href="privacy.html" target="mainFrame">InvestorRelations</a><br /><br /></li>
+            </ul>
+        </nav>
+        <div class="slider_window">
+            <section>
+                <iframe name="mainFrame" id="mainFrame" scrolling="no" width="870px" height="742.88px" src="subframe/the_first.html"></iframe>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // 获取 iframe 元素
+        const iframe = document.getElementById('mainFrame');
+
+        // 获取 "创始人页面" 和 "京东隐私政策" 链接
+        const founderLink = document.getElementById('founder.html');
+        const privacyLink = document.getElementById('privacy.html');
+
+        // 动态调整 iframe 高度的函数
+        function adjustIframeHeight() {
+            setTimeout(() => {
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const body = iframeDocument.body;
+                const html = iframeDocument.documentElement;
+                const height = Math.max(body.scrollHeight, body.offsetHeight, html.scrollHeight, html.offsetHeight);
+                iframe.style.height = height + 'px'; // 设置 iframe 高度
+            }, 500); // 延迟一段时间确保内容加载完毕
+        }
+
+        // 为 "创始人页面" 和 "京东隐私政策" 添加点击事件
+        founderLink.addEventListener('click', function (event) {
+            event.preventDefault(); // 阻止默认的链接跳转
+            iframe.src = this.href; // 更改 iframe 的 src
+            adjustIframeHeight(); // 调整 iframe 高度
+        });
+
+        privacyLink.addEventListener('click', function (event) {
+            event.preventDefault(); // 阻止默认的链接跳转
+            iframe.src = this.href; // 更改 iframe 的 src
+            adjustIframeHeight(); // 调整 iframe 高度
+        });
+
+        // 初始化时加载页面内容并调整 iframe 高度
+        window.onload = adjustIframeHeight;
+    </script>
+</body>
+
+</html>

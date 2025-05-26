@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background-color: white;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .step-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .step-buttons button {
+            flex: 1;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .step-buttons button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .step-box {
+            display: none;
+        }
+
+        .step-box.active {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0400;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #6414f7;
+        }
+
+        .terms-checkbox {
+            margin-top: 10px;
+        }
+
+        .terms-checkbox input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative;">
+        <img src="image/jd.png" alt="example image" style="position: absolute; top: -380px; left: -300px; width: 260px; height: 70px;">
+        
+    </div>
+    <div class="register-container">
+        <!-- 关于步骤的安牛-->
+        <div class="step-buttons">
+            <button class="active" id="step1-tab">步骤 1</button>
+            <button id="step2-tab">步骤 2</button>
+        </div>
+
+        <!-- 注册 -->
+        <div class="step-box active" id="step1">
+            <h3>注册步骤 1: 基本信息</h3>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="请输入用户名" required />
+                <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="请输入邮箱" required />
+                <div id="email-error" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="请输入密码" required />
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <button class="submit-btn" id="next-btn">下一步</button>
+        </div>
+
+        <!-- 个人信息，步骤二 -->
+        <div class="step-box" id="step2">
+            <h3>注册步骤 2: 手机号码验证</h3>
+            <div class="input-group">
+                <input type="text" id="phone" placeholder="请输入手机号码" required />
+                <div id="phone-error" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="address" placeholder="请输入地址" />
+            </div>
+            <div class="terms-checkbox">
+                <input type="checkbox" id="terms" required />
+                <label for="terms">我同意《服务条款》</label>
+                <div id="terms-error" class="error-message"></div>
+            </div>
+            <button class="submit-btn" id="complete-btn">完成注册</button>
+        </div>
+    </div>
+
+
+    <script>
+                // JavaScript更换页面
+        document.getElementById('step1-tab').addEventListener('click', function() {
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('step2').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('step2-tab').classList.remove('active');
+        });
+
+        document.getElementById('step2-tab').addEventListener('click', function() {
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('step1').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('step1-tab').classList.remove('active');
+        });
+
+        //
+        // 获取元素
+        const nextBtn = document.getElementById('next-btn');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const step1Tab = document.getElementById('step1-tab');
+        const step2Tab = document.getElementById('step2-tab');
+
+
+
+
+        // 切换步骤
+        document.getElementById('next-btn').addEventListener('click', function(event) {
+            if (!validateStep1()) {
+                event.preventDefault(); // 阻止跳转到步骤2
+                return;
+            }
+            // 如果验证通过，切换到步骤2
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            document.getElementById('step1-tab').classList.remove('active');
+            document.getElementById('step2-tab').classList.add('active');
+            //还要禁止步骤一按钮
+            step1Tab.disabled = true;
+        });
+
+
+        // 完成注册
+        document.getElementById('complete-btn').addEventListener('click', function() {
+            if (validateStep2()) {
+            // 注册成功
+                alert('恭喜你已经注册成功，可以购物了！');
+            // 关闭注册页面
+                document.querySelector('.register-container').style.display = 'none';
+            }
+        });
+
+
+        //验证部分
+        // 验证用户名（支持汉字，字母，数字，6-12位）
+        function validateUsername(username) {
+            const regex = /^[a-zA-Z0-9\u4e00-\u9fa5]{6,12}$/;
+            return regex.test(username);
+        }
+
+        // 验证邮箱
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+
+        // 验证密码（包含字母、数字和特殊字符，6-12位）
+        function validatePassword(password) {
+            const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,12}$/;
+            return regex.test(password);
+        }
+
+        // 验证手机号码（11位，支持中国常见手机号段）
+        function validatePhone(phone) {
+            const regex = /^(13|14|15|16|17|18|19)\d{9}$/;
+            return regex.test(phone);
+        }
+
+        // 验证步骤1
+        function validateStep1() {
+            let isValid = true;
+
+            // 清除错误信息
+            clearErrorMessages();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // 验证用户名
+            if (!validateUsername(username)) {
+                showErrorMessage('username-error', '用户名应为6-12个字符，支持字母、数字和汉字');
+                isValid = false;
+            }
+
+            // 验证邮箱
+            if (!validateEmail(email)) {
+                showErrorMessage('email-error', '请输入有效的邮箱地址');
+                isValid = false;
+            }
+
+            // 验证密码
+            if (!validatePassword(password)) {
+                showErrorMessage('password-error', '密码必须包含字母、数字和特殊字符，且长度在6-12位之间');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // 验证步骤2
+        function validateStep2() {
+            let isValid = true;
+
+            // 清除错误信息
+            clearErrorMessages();
+
+            const phone = document.getElementById('phone').value;
+            const terms = document.getElementById('terms').checked;
+
+            // 验证手机号码
+            if (!validatePhone(phone)) {
+                showErrorMessage('phone-error', '请输入有效的手机号码');
+                isValid = false;
+            }
+
+            // 验证同意条款
+            if (!terms) {
+                showErrorMessage('terms-error', '必须同意《服务条款》才能继续注册');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // 显示错误信息
+        function showErrorMessage(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.color = 'red';
+        }
+
+        // 清除所有错误信息
+        function clearErrorMessages() {
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(function(element) {
+                element.textContent = '';
+            });
+        }
+    </script>
+</body>
+</html>

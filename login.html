@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            width: 800px;
+            height: 300px; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;/* 使图片可以相对于容器定位 */
+        }
+
+        .tab-buttons {
+            
+            justify-content: space-around;
+            margin-bottom: 20px;
+
+        }
+
+        .tab-buttons button {
+            
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            width: 210px;
+        }
+
+        .tab-buttons button.active {
+            background-color: #007bff;
+            color: white;
+            
+        }
+
+        .login-box {
+            display: none;
+        }
+
+        .login-box.active {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            width: 54%;
+            padding: 10px;
+            background-color: #ff4000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #3732c8;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        /* 调整图片的样式 */
+        .saoma-img {
+            position: absolute;
+            bottom: 20px; /* 将图片定位到容器底部，距离底部20px */
+            height: 300px; /* 控制图片的大小 */
+            left: 480px;
+            width: auto;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative;">
+        <img src="image/jd.png" alt="example image" style="position: absolute; top: -380px; left: -300px; width: 260px; height: 70px;">
+    </div>
+
+    <div class="login-container">
+        <!-- Tab 键更换页面 -->
+        <div class="tab-buttons">
+            <button class="active" id="password-tab">密码登录</button>
+            <button id="sms-tab">短信登录</button>
+        </div>
+
+        <!-- 密码输入 -->
+        <div class="login-box active" id="password-login">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="请输入用户名" />
+                <div id="username-error" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="请输入密码" />
+                <div id="password-error" class="error-message"></div>
+            </div>
+            <div class="forgot-password">
+                <a href="#">忘记密码?</a>
+            </div>
+            <button class="submit-btn" onclick="validateLogin()">登录</button>
+            <div class="forgot-password">
+                <a href="register.html">注册账号</a>
+            </div>
+        </div>
+
+        <!-- 验证码登录的页面 -->
+        <div class="login-box" id="sms-login">
+            <div class="input-group">
+                <input type="text" id="phone" placeholder="请输入手机号码" />
+                <div id="phone-error" class="error-message"></div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="sms-code" placeholder="请输入验证码" />
+                <div id="sms-code-error" class="error-message"></div>
+            </div>
+            <button class="submit-btn" onclick="validateSmsLogin()">登录</button>
+            <div class="forgot-password">
+                <a href="#">重发验证码</a>
+            </div>
+        </div>
+        <img src="image/login/saoma.jpg" alt="扫码图片" class="saoma-img">
+    </div>
+    
+    <script>
+        // JavaScript交换页面
+        
+        document.getElementById('password-tab').addEventListener('click', function() {
+            document.getElementById('password-login').classList.add('active');
+            document.getElementById('sms-login').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('sms-tab').classList.remove('active');
+        });
+
+        document.getElementById('sms-tab').addEventListener('click', function() {
+            document.getElementById('sms-login').classList.add('active');
+            document.getElementById('password-login').classList.remove('active');
+            this.classList.add('active');
+            document.getElementById('password-tab').classList.remove('active');
+        });
+
+        //验证部分的代码：
+        // 用户名验证：不能为空，6-8位，包含字符和数字
+        function validateUsername(username) {
+            const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,8}$/;
+            return regex.test(username);
+        }
+
+        // 密码验证：不能为空，6-10位，包含字符、数字和特殊字符
+        function validatePassword(password) {
+            const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,10}$/;
+            return regex.test(password);
+        }
+
+        // 手机号验证：11位，以13、14、15、16、17、18、19开头
+        function validatePhone(phone) {
+            const regex = /^(13|14|15|16|17|18|19)\d{9}$/;
+            return regex.test(phone);
+        }
+
+        // 邮箱验证：不能为空，必须包含@和.
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+
+        // 短信验证码验证：6位数字
+        function validateSmsCode(code) {
+            const regex = /^\d{6}$/;
+            return regex.test(code);
+        }
+
+        // 错误信息显示
+        function showErrorMessage(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.color = 'red';
+        }
+
+        // 清除错误信息
+        function clearErrorMessage(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = '';
+        }
+
+        // 登录验证（密码登录）
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            let isValid = true;
+
+            // 清除之前的错误信息
+            clearErrorMessage('username-error');
+            clearErrorMessage('password-error');
+
+            // 验证用户名
+            if (!validateUsername(username)) {
+                showErrorMessage('username-error', '用户名不能为空，且必须是6-8位，包含字母和数字');
+                isValid = false;
+            }
+
+            // 验证密码
+            if (!validatePassword(password)) {
+                showErrorMessage('password-error', '密码不能为空，且必须包含字母、数字和特殊字符');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // 验证验证码登录
+        function validateSmsLogin() {
+            const phone = document.getElementById('phone').value;
+            const smsCode = document.getElementById('sms-code').value;
+            let isValid = true;
+
+            // 清除之前的错误信息
+            clearErrorMessage('phone-error');
+            clearErrorMessage('sms-code-error');
+
+            // 验证手机号
+            if (!validatePhone(phone)) {
+                showErrorMessage('phone-error', '手机号必须是11位，并且以13,14,15,16,17,18,19开头');
+                isValid = false;
+            }
+
+            // 验证短信验证码
+            if (!validateSmsCode(smsCode)) {
+                showErrorMessage('sms-code-error', '验证码必须是6位数字');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>
