@@ -1,0 +1,43 @@
+.wrap {
+    width: 1210px;
+    height: 857.33px;
+}
+
+.menu {
+    line-height: 30px;
+    width: 208px;
+    float: left;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+
+.menu li {
+
+    line-height: 62.67px;
+    text-align: center;
+    text-decoration: none;
+    text-align: left;
+    width: 178px;
+    height: 62.67px;
+    border-bottom: 1px solid #ccc;
+    margin-left: 0;
+    padding-left: 30px;
+}
+
+.slider_window {
+    position: relative;
+    width: 800px;
+    height: 742px;
+    left: 100px;
+    padding: 10px;
+    float: left;
+
+}

@@ -1,0 +1,1623 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+#bg {
+    min-width: 1500px;
+    height: auto;
+    background-color: rgb(244, 244, 244);
+}
+
+#bg>.bd {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+div.box {
+    margin: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(227, 228, 229);
+    position: relative;
+    min-width: 1500px;
+    /* padding: auto; */
+}
+
+.jdimg{
+    width: 250px;
+    height: 80px;
+    float: left;
+}
+
+.jingdou{
+    width: 250px;
+    height: 120px;
+    float: right;
+    margin-top: -50px;
+}
+
+
+.clickable {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 13px;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+.bigpicture{
+    width: 600px;           /* 设置图片的宽度 */
+    height: 530px;          /* 设置图片的高度 */
+    vertical-align: middle; /* 确保图片垂直居中 */
+    transition: width 2s ease-in-out;  /* 2秒内平滑变化 */
+}
+.bigpicture:hover{
+    opacity: 0.5; 
+}
+.xiaotubiao{
+    width: 20px;           /* 设置图片的宽度 */
+    height: 20px;          /* 设置图片的高度 */
+    vertical-align: middle; /* 确保图片垂直居中 */
+}
+
+.youcextb{
+    width: 20px;           /* 设置图片的宽度 */
+    height: 20px;          /* 设置图片的高度 */
+}
+
+.demo3 {
+    width: 570px;
+    height: 150px;
+    font-size: 0px;
+    animation: three 3s infinite linear;
+}
+.fsthree img {
+    /* 单个图片大小 */
+    width: 190px;
+    height: 150px;
+    float: left;
+}
+
+@keyframes three {
+
+    /* 播放动画 */
+    0%,
+    32.99% {
+        margin-left: 0px;
+    }
+
+    33%,
+    67.99% {
+        margin-left: -190px;
+    }
+
+    68%,
+    100% {
+        margin-left: -380px;
+    }
+}
+
+.fsfour {
+    margin-top: 10px;
+    height: 470px;
+    width: 190px;
+    background-color: rgb(255, 255, 255);
+}
+
+.fsfour>.one {
+    position: relative;
+    flex-wrap: wrap;
+    width: 190px;
+    height: 102px;
+    z-index: 0;
+}
+
+.fsfour .one .o {
+    /* 头像框 */
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 13px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.grid-container {
+    /* 网格布局 */
+    display: grid;
+    height: 30px;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-gap: 0px;
+    /* 网格间隙 */
+    background-color: rgb(227, 228, 229);
+    position: absolute;
+    /*绝对位置，使重叠*/
+    left: 10%;
+    /* 盒子里左右比例 */
+    right: 11%;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-container a.r {
+
+    display: block;
+    color: rgb(153, 153, 153);
+    font-family: "宋体";
+    font-size: 7px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    border-left: 1px solid rgb(204, 204, 204);
+    max-height: 20px;
+    min-width: 80px;
+    
+}
+
+.grid-container a.l {
+
+    display: block;
+    color: rgb(153, 153, 153);
+    font-family: "宋体";
+    font-size: 7px;
+    margin: 0;
+    text-align: center;
+    text-decoration: none;
+    max-height: 20px;
+    min-width: 80px;
+
+}
+
+.grid-container a.active {
+    color: rgb(153, 153, 153);
+}
+
+.grid-container a.active:hover {
+    color: rgb(227, 51, 51);
+}
+
+.grid-container a.red {
+    color: rgb(227, 51, 51);
+}
+
+.tooltiptext1 {
+    /* 提示文本 */
+    visibility: hidden;
+    padding: 10px;
+    width: 300px;
+    height: 442px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0ch;
+    color: rgb(153, 153, 153);
+    background-color: rgb(255, 255, 255);
+    /* 定位 */
+    position: absolute;
+    z-index: 10;
+    /* 提示在图片外面 */
+    top: 100%;
+    margin-left: -68px;
+}
+
+.tooltiptext2 {
+    /* 《我的京东》提示框 */
+    visibility: hidden;
+    padding: 10px;
+    width: 280px;
+    height: 161px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0ch;
+    color: rgb(153, 153, 153);
+    background-color: rgb(255, 255, 255);
+    /* 定位 */
+    position: absolute;
+    z-index: 10;
+    /* 提示在图片外面 */
+    top: 100%;
+    margin-left: -72px;
+}
+
+.tooltiptext3 {
+    /* 《企业采购》提示框 */
+    visibility: hidden;
+    text-align: left;
+    padding: 10px;
+    width: 140px;
+    height: 151px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0ch;
+    color: rgb(153, 153, 153);
+    background-color: rgb(255, 255, 255);
+    /* 定位 */
+    position: absolute;
+    z-index: 10;
+    /* 提示在图片外面 */
+    top: 100%;
+    margin-left: -72px;
+}
+
+.tooltiptext4 {
+    /* 《企业采购》提示框 */
+    visibility: hidden;
+    text-align: left;
+    padding: 10px;
+    width: 240px;
+    height: 429px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0ch;
+    color: rgb(153, 153, 153);
+    background-color: rgb(255, 255, 255);
+    /* 定位 */
+    position: absolute;
+    z-index: 10;
+    /* 提示在图片外面 */
+    top: 100%;
+    margin-left: -72px;
+}
+.dq:hover .tooltiptext4 {
+    /* 提示文本 */
+    visibility: visible;
+}
+.dq:hover .tooltiptext3 {
+    /* 提示文本 */
+    visibility: visible;
+}
+
+.dq:hover .tooltiptext2 {
+    /* 提示文本 */
+    visibility: visible;
+}
+
+.dq:hover .tooltiptext1 {
+    /* 提示文本 */
+    visibility: visible;
+}
+
+ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0px;
+}
+
+li {
+    display: inline-block;
+    margin: auto;
+    padding: 0;
+    color: rgb(153, 153, 153);
+    text-decoration: none;
+    width: 60px;
+    line-height: 25px;
+}
+
+li:hover {
+    color: rgb(227, 51, 51);
+    background-color: rgb(244, 244, 244);
+}
+
+li.active {
+
+    margin-right: 40px;
+}
+
+li.active:hover {
+    color: rgb(227, 51, 51);
+    background-color: rgb(255, 255, 255);
+}
+
+li.a {
+    width: 100px;
+}
+
+li.jdg:hover {
+    color: rgb(227, 51, 51);
+    background-color: rgb(255, 255, 255);
+}
+
+ul p {
+    /* 块级元素 */
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#header {
+    min-width: 1500px;
+    height: 140px;
+    background-color: rgb(255, 255, 255);
+}
+
+#header.w {
+    position: relative;
+    z-index: 0;
+    height: 140px;
+}
+
+.hbody {
+    position: relative;
+    width: 1190px;
+    height: 140px;
+    margin: auto;
+}
+
+.search-m {
+    /* 搜索 */
+    position: relative;
+    width: 1190px;
+    height: 60px;
+    margin: auto;
+    z-index: 1;
+}
+
+.search-m .from {
+    position: absolute;
+    width: 550px;
+    height: 32px;
+    top: 25px;
+    left: 260px;
+    border: 1px solid rgb(226, 35, 26);
+    background-color: rgb(255, 255, 255);
+}
+
+.search-m .from .ssk {
+    width: 488px;
+    height: 32px;
+    outline: none;s
+}
+
+.search-m img {
+    /* 搜索图片 */
+    width : 58px;
+    height : 32px;
+    float: right;
+    top: 25px;
+}
+
+.search-m .gwc {
+    /* 我的购物车 */
+    position: absolute;
+    left: 830px;
+    top: 25px;
+    width: 130px;
+    height: 34px;
+    font-family: "宋体";
+    font-size: 7px;
+    border: 1px solid rgb(238, 238, 238);
+    color: #e1251b;
+    text-align: center;
+    line-height: 36px;
+}
+
+.hotwords {
+    /* 搜索框下面词条 */
+    display: flex;
+    position: absolute;
+    top: 65px;
+    left: 260px;
+    width: 550px;
+    height: 20px;
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+    flex-wrap: nowrap;
+}
+
+.w li {
+    width: auto;
+}
+
+.w li.one {
+    color: #e1251b;
+}
+
+.w li:hover {
+    cursor: pointer;
+    /* 鼠标样式 */
+    color: #e1251b;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.img {
+    /*京东图片 */
+    position: absolute;
+    width: 190px;
+    height: 120px;
+    left: 20px;
+    top: 10px;
+}
+
+.hbottom {
+    display: flex;
+
+    flex-wrap: nowrap;
+    position: absolute;
+    width: 700px;
+    height: 40px;
+    bottom: 0px;
+    left: 203px;
+}
+
+.hbottom li.one {
+    font-weight: 700;
+}
+
+.hbottom li {
+    color: black;
+}
+
+#fs {
+    position: relative;
+    min-width: 1500px;
+    height: 480px;
+    background-color: rgb(244, 244, 244);
+}
+
+.menu-item {
+    padding: 0.8px;
+    cursor: pointer;
+    position: relative;
+}
+.submenu {
+    display: none; /*默认隐藏下一级菜单*/
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* 设置子菜单的层级，使其在图片之上 */
+}
+
+.fsbody {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    width: 1190px;
+    height: 470px;
+    margin: auto;
+}
+
+.fsone {
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 0px;
+    height: 450px;
+    width: 190px;
+    background-color: rgb(254, 254, 254);
+}
+
+.fsone li {
+    display: block;
+    list-style-type: none;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    width: auto;
+    margin-left: 15px;
+    font-size: 22px;
+}
+
+.fsone span:hover {
+    color: rgb(200, 22, 35);
+}
+
+.fsone li:hover .hd {
+    visibility: visible;
+}
+.fsone .hd .hdbody{
+    width: 998px;
+    height: 432px;
+    padding: 20px 0 10px 0;
+    position: relative;
+}
+.fsone .hd .hdbody .box1{
+    width: 800px;
+    height: 24px;
+    padding: 0 0 0 20px;
+    display: flex;
+}
+.fsone .hd .hdbody .box1 div{
+    width: auto;
+    height: 24px;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+    background-color: #333333;
+    margin-right: 10px;
+    padding: 0 10px;
+}
+.fsone .hd .hdbody .box1 div:hover{
+    background-color: #c81623;
+}
+.fsone .hd .hdbody .box2{
+    width: 780px;
+    height: 398x;
+    padding: 10px 0 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.fsone .hd .hdbody .gg1{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 166px;
+    height: 140px;
+}
+.fsone .hd .hdbody .gg2{
+    position: absolute;
+    top:170px;
+    right: 30px;
+    width: 166px;
+    height: 140px;
+
+}
+.fsone .hd .hdbody .box2 .sbox{
+    position: relative;
+    width: 700px;
+    height: auto;
+    padding: 5px 0 5px 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.fsone .hd .hdbody .box2 .sbox .r{
+    margin:  3px 0;
+    padding: 0 7px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 7px;
+    color: #666;
+}
+.fsone .hd .hdbody .box2 .sbox .l{
+    position: absolute;
+    right: 700px;
+    top:9px;
+    font-size: 7px;
+    color: #333;
+    line-height: 16px;
+    height: 16px;
+    font-weight: 700;
+}
+.fsone .hd {
+    /* 家用电器隐藏文本框 */
+    z-index: 100;
+    visibility: hidden;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    width: 980px;
+    height: 462px;
+    border: 1px solid rgb(211, 211, 211);
+    /* 定位 */
+    /* margin-top: -10px;
+    margin-left: 190px; */
+    top: 0px;
+    left: 160px;
+
+}
+
+/* 自动加手动轮播图 */
+.banner {
+    /* 图片播放窗口 */
+    position: relative;
+    top: 10px;
+    width: 590px;
+    height: 470px;
+    overflow: hidden;
+}
+
+.banner ul {
+    /* 图片存储容器 */
+    width: 1770px;
+    padding: 0;
+    transition: all 1s;
+}
+
+.banner li {
+    /* 轮播图单图 */
+    list-style: none;
+    width: 590px;
+    height: 470px;
+    float: left;
+}
+
+.circle {
+    /* 循环 */
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+}
+
+.circle label {
+    /* 图片下方按钮点击前 */
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .4);
+    position: relative;
+    cursor: pointer;
+}
+
+.circle label::after {
+    /* 图片下方按钮点击后 */
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    position: absolute;
+
+    opacity: 0;
+    /* 不透明度 */
+}
+
+#put1:checked~.circle label:first-of-type::after,
+#put2:checked~.circle label:nth-of-type(2)::after,
+#put3:checked~.circle label:nth-of-type(3)::after {
+    opacity: 1;
+}
+
+#put1:checked~ul {
+    margin-left: 0;
+}
+
+#put2:checked~ul {
+    margin-left: -590px;
+}
+
+#put3:checked~ul {
+    margin-left: -1180px;
+}
+
+.left_arrow label {
+    /* 隐藏按钮的位置 */
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 0%;
+    margin-top: -12.5px;
+    position: absolute;
+    margin-left: 25px;
+}
+
+/* 圆点的put1,put2,put3和箭头的put1,put2,put3是相互联系的，同时受input制约 */
+#put1:checked~.left_arrow label:nth-of-type(3),
+#put2:checked~.left_arrow label:nth-of-type(1),
+#put3:checked~.left_arrow label:nth-of-type(2) {
+    opacity: 0.5;
+    margin-left: 0px;
+    cursor: pointer;
+    background: url(image/dem/left.png) no-repeat center center;
+    /* background-color: #000; */
+}
+
+.right_arrow label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    right: 0%;
+    margin-top: -12.5px;
+    position: absolute;
+    margin-right: 25px;
+}
+
+#put1:checked~.right_arrow label:nth-of-type(2),
+#put2:checked~.right_arrow label:nth-of-type(3),
+#put3:checked~.right_arrow label:nth-of-type(1) {
+    opacity: 0.5;
+    margin-right: 0px;
+    cursor: pointer;
+    background: url(image/dem/right.png) no-repeat center center;
+}
+
+
+
+.fsthree {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-top: 10px;
+    width: 190px;
+    height: 470px;
+    overflow: hidden;
+}
+
+.fsthree>.a {
+    /* 循环播放容器 */
+    width: 190px;
+    height: 150px;
+}
+
+.demo3 {
+    /* 图片容器 */
+    width: 570px;
+    height: 150px;
+    font-size: 0px;
+    animation: three 30s infinite linear;
+}
+
+.fsthree img {
+    /* 单个图片大小 */
+    width: 190px;
+    height: 150px;
+    float: left;
+}
+.fsfour {
+    margin-top: 10px;
+    height: 470px;
+    width: 190px;
+    background-color: rgb(255, 255, 255);
+}
+
+.fsfour>.one {
+    position: relative;
+    flex-wrap: wrap;
+    width: 190px;
+    height: 102px;
+    z-index: 0;
+}
+
+.fsfour .one .o {
+    /* 头像框 */
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 13px;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+
+.fsfour .one .t {
+    /* 欢迎逛京东 */
+    position: absolute;
+    width: 106px;
+    height: 38px;
+    margin-top: 16px;
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+.fsfour .one .t span:hover {
+    color: #c81623;
+}
+
+.fsfour .one .bottom {
+    /* 新人福利、plus会员 框 */
+    position: absolute;
+    justify-content: space-between;
+    margin-top: 70px;
+    height: 25px;
+    width: 100%;
+}
+
+.img1 {
+    /* 头像 */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fsfour .one li {
+    list-style-type: none;
+    width: auto;
+    display: block;
+    color: #666;
+    font-size: 7px;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.fsfour .one li:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.fsfour .red:hover {
+    color: rgb(200, 22, 35);
+}
+
+.fsfour>.one>.bottom>.left {
+    /* 新人福利 */
+    position: absolute;
+    margin: 0 16px;
+    width: 70px;
+    height: 25px;
+    min-width: auto;
+    background-color: rgb(223, 36, 28);
+    color: rgb(255, 255, 255);
+    font-size: 7px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.fsfour>.one>.bottom>.right {
+    /* PLUS会员 */
+    position: absolute;
+    margin: 0 16px;
+    width: 70px;
+    height: 25px;
+    margin-left: 100px;
+    min-width: auto;
+    background-color: rgb(54, 54, 52);
+    border-radius: 30px;
+    font-size: 7px;
+    text-align: center;
+    line-height: 25px;
+    color: rgb(229, 215, 144);
+    cursor: pointer;
+}
+
+hr {
+    width: 60%;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    margin: auto;
+}
+
+.fsfour>.two {
+    width: 190px;
+    height: 130px;
+}
+
+.fsfour>.two>.o {
+    /* 京东快报 */
+    margin: 0px 15px;
+    padding: 10px 0 0 0;
+    width: 150px;
+    height: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.fsfour>.two>.o>a {
+    /* “更多 */
+    text-decoration: none;
+    /* 删除下划线 */
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+    float: right;
+    cursor: pointer;
+}
+
+.fsfour>.two>.t {
+    list-style-type: none;
+    font-size: 12px;
+    height: 100px;
+    color: #666;
+    width: 160px;
+    margin: auto;
+}
+
+.fsfour>.two>.t>li {
+    cursor: pointer;
+    color: #666;
+    width: 160px;
+    height: 20px;
+    overflow: hidden;
+    /*规定文本不进行换行*/
+    white-space: nowrap;
+    /*当对象内文本溢出时显示省略标记（...）*/
+    text-overflow: ellipsis;
+}
+
+.fsfour>.two>.t>li:hover {
+    background-color: rgb(255, 255, 255);
+    color: #c81623;
+}
+.fsfour>.three {
+    display: flex;
+    width: 190px;
+    margin-top: 11px;
+    height: 225px;
+}
+
+.fsfour>.three>.bb {
+    /* 话费等先分为三等份 */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* 子元素从上往下分 */
+}
+
+.fsfour>.three>.bb>div {
+    cursor: pointer;
+    /* 三等份里的四个小盒子 */
+    display: flex;
+    flex-direction: column;
+    /* 从上往下排列 */
+    flex: 1;
+    align-items: center;
+    /* 侧轴（x）居中 */
+    color: #333;
+    font-size: 7px;
+}
+.fsfour>.three>.bb>div>img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+    opacity: 1;
+}
+
+#fixed a {
+    /* 清除下划线 */
+    text-decoration: none;
+    color: #e1251b;
+    font-size: 14px;
+    padding: auto;
+}
+
+#fixed hr {
+    position: absolute;
+    left: 12px;
+}
+
+#pdgcbg {
+    min-width: 1500px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+#pdgcbg>.pdgc {
+    width: 150px;
+    height: 45px;
+    margin: 0 auto 20px;
+    padding: 0 30px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 45px;
+    text-align: center;
+    position: relative;
+}
+
+#pdgcbg>.pdgc>.divf {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 12.5px;
+    left: 0px
+}
+/*为你推荐部分的框框*/
+#pdgcbg1>.pdgc {
+    width: 150px;
+    height: 45px;
+    margin: 0 auto 20px;
+    padding: 0 30px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 45px;
+    text-align: center;
+    position: relative;
+}
+
+#pdgcbg1>.pdgc>.divf {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 12.5px;
+    left: 0px
+}
+
+#pdgcbg1>.pdgc>.divl {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 12.5px;
+    right: 0px;
+}
+
+.popup-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    padding: 10px;
+    width: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.body div:hover .popup-info {
+    display: block;
+    opacity: 1;
+}
+
+.popup-info .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.popup-info .desc {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+#jdcsbg {
+    min-width: 1500px;
+    height: 950px;
+    margin-bottom: 20px;
+}
+
+#jdcsbg .tbox {
+    /* 顶部的盒子 */
+    width: 250px;
+    height: 30px;
+    padding: 17px 0 13px 0;
+    margin: 0 10px 0px 30px;
+
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+#jdcsbg .tbox>.sbox {
+    color: #999;
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+#jdcsbg .bbox {
+    /* 底部的盒子 */
+    display: flex;
+    width: 260px;
+    height: 100px;
+    margin: 0 0 0 30px;
+
+}
+
+#jdcsbg .bbox>.lbox {
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+    transition: opacity 0.5s;
+}
+
+#jdcsbg .bbox>.lbox:hover {
+    opacity: 0.8;
+}
+
+#jdcsbg .jdimg,
+.sximg {
+    transition: opacity 0.5s;
+}
+
+#jdcsbg .jdimg:hover,
+.sximg:hover {
+    opacity: 0.8;
+}
+
+#wntj {
+    width: 1190px;
+    margin: auto;
+    height: 1056px;
+}
+
+#wntj>.header {
+    width: 1190px;
+    height: 60px;
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+#wntj .header ul {
+    width: 1080px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+}
+
+#wntj .header ul li {
+    width: 180px;
+    height: 60px;
+    /*首先设置边框只显示右侧，宽度为2px的实线。*/
+    border-right: 2px solid;
+    /*设置线性渐变*/
+    border-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(226, 226, 226) 50%, rgba(255, 255, 255, 0) 90%) 2 2 2 2;
+
+}
+
+/*悬浮栏*/
+#c>.bd>.r>ul>.li1 {
+    margin: 50px 50px 0 0;
+    width: 150px;
+    height: auto;
+}
+
+#c>.bd>.r>ul>.li2 {
+    margin: 20px 50px 0 0;
+    width: 150px;
+    height: auto;
+}
+#c ul li:hover {
+    /* 与屎山代码抵消 */
+    background-color: rgb(255, 255, 255);
+}
+
+#wntj .header ul .li {
+    width: 180px;
+    height: 60px;
+    border-right: 0px;
+}
+#fixed {
+    top: 100px;
+    width: 58px;
+    height: 420px;
+    position: fixed;
+    left: 50%;
+    margin-left: 630px;
+    z-index: 99;
+}
+
+#fixed>ul {
+    width: 58px;
+    height: 420px;
+}
+
+#fixed>ul>li {
+    width: 58px;
+    height: 60px;
+    line-height: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#fixed>ul>li>.li1 {
+    width: 28px;
+    height: 38.2px;
+    color: #e1251b;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+#fixed>ul>li>.li2 {
+    width: 28px;
+    height: 38.2px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+#fixed>ul>li>.li3 {
+    width: 28px;
+    height: 19.2px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+#fixed .i {
+    width: 16px;
+    height: 16.8px;
+    margin: 0 10px;
+}
+
+#fixed>ul>li>.li2>a {
+    color: #333;
+}
+
+#fixed>ul>li>.li3>a {
+    color: #333;
+}
+
+#fixed li:hover {
+    background-color: rgb(200, 22, 35);
+}
+
+#fixed li:hover .a {
+    color: #fff;
+}
+
+#fixed a {
+    /* 清除下划线 */
+    text-decoration: none;
+    color: #e1251b;
+    font-size: 14px;
+    padding: auto;
+}
+
+#fixed hr {
+    position: absolute;
+    left: 12px;
+}
+
+#wntj .header ul li:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#wntj .header ul li:hover .tbox {
+    color: #c81623;
+}
+
+#wntj .header ul li:hover .bbox {
+    color: #c81623;
+}
+
+#wntj .header ul li .tbox {
+    width: 180px;
+    height: 27px;
+    margin-top: 7px;
+    color: #333333;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+}
+
+#wntj .header ul li .tbox1 {
+    width: 70px;
+    height: 27px;
+    color: #fff;
+    padding: 0 5px;
+    margin: auto;
+    background-color: #e1251b;
+    border-radius: 50px;
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+}
+
+#wntj .header ul li .bbox {
+    width: 180px;
+    height: 21px;
+    color: #999999;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#wntj .header ul li .bbox1 {
+    width: 180px;
+    height: 21px;
+    color: #e1251b;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#wntj .body {
+    width: 1190px;
+    height: 986px;
+    display: grid;
+    grid-template-columns: repeat(5, 230px);
+    grid-template-rows: repeat(3, 322px);
+    place-content: space-between space-between;
+}
+
+#wntj .body div {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+}
+
+#wntj .body div .zxs {
+    transition: opacity 0.5s;
+    opacity: 0;
+    position: absolute;
+    width: 120px;
+    height: 28px;
+    border: 1px solid #353131;
+    background-color: #353131;
+    font-size: 12px;
+    border-radius: 15px;
+    color: #fff;
+    left: 55px;
+    bottom: 20px;
+    visibility: hidden;
+    text-align: center;
+    line-height: 28px;
+}
+
+#wntj .body div:hover .zxs {
+    visibility: visible;
+    opacity: 1;
+}
+
+#wntj .body div:hover .bbox {
+    opacity: 0;
+}
+
+#wntj .body .tbox {
+    background-color: rgb(255, 255, 255);
+    width: 150px;
+    height: 150px;
+    margin: 30px 40px 40px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#wntj .body div:hover .tbox {
+    opacity: 0.8;
+}
+
+#wntj .body .mbox {
+    margin: auto;
+    text-align: center;
+    width: 190px;
+    height: 48px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    overflow: hidden;
+    /*当对象内文本溢出时显示省略标记（...）*/
+    text-overflow: ellipsis;
+    /* 在第几行隐藏出省略号 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#wntj .body .bbox {
+    width: 190px;
+    height: 30px;
+    margin: auto;
+    font-size: 18px;
+    color: #e1251b;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+#wntj .body .mbox span {
+    background-color: #e1251b;
+    border-radius: 2px;
+    color: #fff;
+    padding: 0 5px;
+    margin-right: 4px;
+    line-height: 16px;
+    height: 16px;
+    font-size: 12px;
+}
+
+#wntj .body .bbox span {
+    font-size: 12px;
+    color: #e1251b;
+    font-weight: 700;
+}
+
+#wntj .body .div1 {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#wntj .body .jxdiv {
+    width: 100%;
+    height: 100%;
+    background-image: url('image/为你推荐/精选.png');
+}
+
+#wntj .body .jxdiv .header {
+    width: 110px;
+    height: 34px;
+    margin: 20px 60px 37px 60px;
+    line-height: 34px;
+    color: #fff;
+    background-color: #f2272b;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50px;
+}
+
+#wntj .body .jxdiv .bbbox {
+    width: 230px;
+    height: 192px;
+    display: grid;
+    place-content: space-around space-around;
+    grid-template-columns: repeat(2, 88px);
+    grid-template-rows: repeat(4, 32px);
+}
+
+#wntj .body .jxdiv .bbbox div {
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    color: #c81623;
+    border: 1px solid #ffe0e8;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+}
+
+#wntj .body .jxdiv .bbbox div:hover {
+    background: #c81623;
+    border-color: #c81623;
+    color: #fff;
+}
+#dbbg{
+    margin-top:10px;
+    width: 1190px;
+    height: 570px;
+    margin: auto;
+}
+#dbbg .box1{
+    width: 1190px;
+    height: 42px;
+    padding: 30px 0;
+    display: flex;
+    border-bottom: 1px solid #dedede;
+}
+#dbbg .box1 .zbox{
+    position: relative;
+    width: 180px;
+    height: 42px;
+    padding-left: 45px;
+    margin: 0 36px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #444;
+    line-height: 42px;
+}
+#dbbg .box1 .zbox img{
+    width: 36px;
+    height: 42px;
+    position: absolute;
+    left: 0px;
+}
+#dbbg .box2{
+    display: flex;
+    width: 1190px;
+    height: 160px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dedede;
+}
+#dbbg .box2 .lbox{
+    width: 990px;
+    height: 159px;
+}
+#dbbg .box2 .lbox .lbox1{
+    width: 990px;
+    height: 22px;
+    margin-bottom: 5px;
+    display: flex;
+}
+#dbbg .box2 .lbox .lbox1 .text{
+    width: 198px;
+    height: 22px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #666666;
+}
+#dbbg .box2 .lbox .lbox2{
+    width: 990px;
+    height: 22px;
+    display: grid;
+    grid-template-columns: repeat(5,198px);
+    grid-template-rows: repeat(6,22px);
+}
+#dbbg .box2 .lbox .lbox2 .text{
+    color: #666666;
+    font-size: 12px;
+    width: auto;
+    height: 16px;
+}
+#dbbg .box2 .rbox{
+    width: 200px;
+    height: 150px;
+}
+#dbbg .box2 .rbox .text{
+    width: 200px;
+    height: 21px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+    color: #666666;
+}
+#dbbg .box2 .rbox .bbox{
+    width: 180px;
+    height: 54px;
+    padding: 0 10px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 18px;
+}
+#dbbg .box2 .rbox .bbox .b1box{
+    width: 180px;
+    text-align: right;
+}
+#dbbg .box3{
+    width: 1190px;
+    height: 236px;
+    padding: 15px 0;
+    border-top: 1px;
+}
+#dbbg .box3 .box31{
+    width: 1190px;
+    height: 18px;
+    padding: 0px;
+    display: flex;
+}
+#dbbg .box3 .box31 li{
+    width: auto;
+    height: 16px;
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+#dbbg .box3 .box31 span{
+    margin: 0 7px;
+    color: #cccccc;
+    font-weight: 100;
+}
+#dbbg .box3 .box32{
+    width: 1190px;
+    height: 110px;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#dbbg .box3 .box32 ul{
+    flex:1;
+    width: 1190px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+}
+#dbbg .box3 .box32 li{
+    width: auto;
+    height: 16px;
+    color: #999999;
+    font-size: 12px;
+    text-align: center;
+    margin: 0px;
+    line-height: 22px;
+}
+#dbbg .box3 .box32 span{
+    line-height: 22px;
+    margin: 0 7px;
+    color: #999999;
+    font-weight: 100;
+    font-size: 12px;
+}
+#dbbg .box4{
+    width: 1190px;
+    height: 36.4px;
+    color: #666666;
+    font-size: 12px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+#dbbg .box4 img{
+    width: 103px;
+    height: 32px;
+    margin: 0 3px;
+}
+#dbbg .box4 .img1{
+    width: 70px;
+    height: 32px;
+    margin: 0 3px;
+    border-radius: 0;
+}
+#dbbg .box4 .img2{
+    width: 88px;
+    height: 32px;
+    margin: 0 3px;
+}
